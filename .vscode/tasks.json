@@ -9,13 +9,11 @@
       "args": [
         "run",
         "--project",
-        "${workspaceFolder}/Project-2.csproj",
+        "${workspaceFolder}/registry-app.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
-      "problemMatcher": {
-        "pattern": "$msCompile"
-      }
+      "problemMatcher": "$msCompile"
     },
     {
       "label": "build",
@@ -23,7 +21,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/Project-2.csproj",
+        "${workspaceFolder}/registry-app.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
@@ -35,7 +33,7 @@
       "type": "process",
       "args": [
         "publish",
-        "${workspaceFolder}/Project-2.csproj",
+        "${workspaceFolder}/registry-app.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
@@ -49,7 +47,7 @@
         "watch",
         "run",
         "--project",
-        "${workspaceFolder}/Project-2.csproj"
+        "${workspaceFolder}/registry-app.csproj"
       ],
       "problemMatcher": "$msCompile"
     }

@@ -1,5 +1,4 @@
 {
-  "version": "0.2.0",
   "configurations": [
     {
       "name": ".NET Core Launch (console)",
@@ -7,7 +6,7 @@
       "request": "launch",
       "preLaunchTask": "run",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/bin/Debug/net7.0/Project-2.dll",
+      "program": "${workspaceFolder}/bin/Debug/net7.0/registry-app.dll",
       "args": [],
       "cwd": "${workspaceFolder}",
       // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console

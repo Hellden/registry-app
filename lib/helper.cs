@@ -35,10 +35,18 @@ class Helper
     Une colonne Name est requis.
     ");
     Console.ForegroundColor = ConsoleColor.White;
-    Console.WriteLine("--------------------------------------------------------");
+    Console.WriteLine("=========================================================================");
     Console.WriteLine(@"
     -h, -help                               aide
-    -g, -generate-csv                       génére un template de csv
+    -g, -generate-csv                       génére un template csv
+    -s, -scan                               lancer le scan
+    -f, -file                               spécifié le nom du fichier csv
+    -l, -log                                log d'exécution
+    ");
+    Console.WriteLine(@"
+      Exemple :
+        registryapp -g testappli
+        registryapp -f testappli -s
     ");
   }
 }

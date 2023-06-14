@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/hellden/sandbox/charp/registry-app/registry-app.csproj": {}
+    "/Users/hellden/sandbox/csharp/registry-app/registry-app.csproj": {}
   },
   "projects": {
-    "/Users/hellden/sandbox/charp/registry-app/registry-app.csproj": {
+    "/Users/hellden/sandbox/csharp/registry-app/registry-app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hellden/sandbox/charp/registry-app/registry-app.csproj",
+        "projectUniqueName": "/Users/hellden/sandbox/csharp/registry-app/registry-app.csproj",
         "projectName": "registry-app",
-        "projectPath": "/Users/hellden/sandbox/charp/registry-app/registry-app.csproj",
+        "projectPath": "/Users/hellden/sandbox/csharp/registry-app/registry-app.csproj",
         "packagesPath": "/Users/hellden/.nuget/packages/",
-        "outputPath": "/Users/hellden/sandbox/charp/registry-app/obj/",
+        "outputPath": "/Users/hellden/sandbox/csharp/registry-app/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/hellden/.nuget/NuGet/NuGet.Config"

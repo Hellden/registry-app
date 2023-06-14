@@ -1,0 +1,15 @@
+/Users/hellden/sandbox/charp/registry-app/bin/Debug/net7.0/registry-app
+/Users/hellden/sandbox/charp/registry-app/bin/Debug/net7.0/registry-app.deps.json
+/Users/hellden/sandbox/charp/registry-app/bin/Debug/net7.0/registry-app.runtimeconfig.json
+/Users/hellden/sandbox/charp/registry-app/bin/Debug/net7.0/registry-app.dll
+/Users/hellden/sandbox/charp/registry-app/bin/Debug/net7.0/registry-app.pdb
+/Users/hellden/sandbox/charp/registry-app/obj/Debug/net7.0/registry-app.csproj.AssemblyReference.cache
+/Users/hellden/sandbox/charp/registry-app/obj/Debug/net7.0/registry-app.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hellden/sandbox/charp/registry-app/obj/Debug/net7.0/registry-app.AssemblyInfoInputs.cache
+/Users/hellden/sandbox/charp/registry-app/obj/Debug/net7.0/registry-app.AssemblyInfo.cs
+/Users/hellden/sandbox/charp/registry-app/obj/Debug/net7.0/registry-app.csproj.CoreCompileInputs.cache
+/Users/hellden/sandbox/charp/registry-app/obj/Debug/net7.0/registry-app.dll
+/Users/hellden/sandbox/charp/registry-app/obj/Debug/net7.0/refint/registry-app.dll
+/Users/hellden/sandbox/charp/registry-app/obj/Debug/net7.0/registry-app.pdb
+/Users/hellden/sandbox/charp/registry-app/obj/Debug/net7.0/registry-app.genruntimeconfig.cache
+/Users/hellden/sandbox/charp/registry-app/obj/Debug/net7.0/ref/registry-app.dll

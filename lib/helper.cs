@@ -2,7 +2,7 @@ class Helper
 {
   public Helper()
   {
-    Console.ForegroundColor = ConsoleColor.DarkBlue;
+    Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine(@"
               .-""""-.
              /        \
@@ -45,8 +45,8 @@ class Helper
     ");
     Console.WriteLine(@"
       Exemple :
-        registryapp -g testappli
-        registryapp -f testappli -s
+        ./registryapp -g testappli
+        ./registryapp -f testappli -s
     ");
   }
 }

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "icJsCbYMD7LrRTWK4XxQVretYPsf1sypmBhHVVR8jMqIaoidH1MuhZusZ4BcN1dPl7px4KaQIYVtPOmtcBzqsA==",
+  "dgSpecHash": "YpfRnBVfwe6qap25xXY3Desk3I9yfc1ej7ppkTYN+spqerMRQpiaxpMCG63j+BOOeCh2RCAkHxde+JUdwqmNbw==",
   "success": true,
-  "projectFilePath": "/Users/hellden/sandbox/csharp/registry-app/registry-app.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\rchap\\Documents\\Sandbox\\csharp\\registry-app\\registry-app.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rchap\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.5\\microsoft.netcore.app.ref.7.0.5.nupkg.sha512",
+    "C:\\Users\\rchap\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.5\\microsoft.windowsdesktop.app.ref.7.0.5.nupkg.sha512",
+    "C:\\Users\\rchap\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.5\\microsoft.aspnetcore.app.ref.7.0.5.nupkg.sha512",
+    "C:\\Users\\rchap\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.5\\microsoft.netcore.app.host.win-x64.7.0.5.nupkg.sha512"
+  ],
   "logs": []
 }

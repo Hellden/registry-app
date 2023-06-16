@@ -32,13 +32,13 @@ class Helper
     Console.WriteLine(@"
     Bienvenue sur l'outil de contrôle des serveurs !
     Un fichier csv est nécessaire pour lister les programmes autorisés.
-    Une colonne Name est requis.
+    Une colonne 'Name' est requis.
     ");
     Console.ForegroundColor = ConsoleColor.White;
     Console.WriteLine("=========================================================================");
     Console.WriteLine(@"
     -h, -help                               aide
-    -g, -generate-csv                       génére un template csv
+    -g, -generate                           génére un template csv
     -s, -scan                               lancer le scan
     -f, -file                               spécifié le nom du fichier csv
     -l, -log                                log d'exécution

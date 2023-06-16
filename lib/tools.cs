@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
 
 class Tools
 {
@@ -31,22 +32,9 @@ class Tools
   {
     try
     {
-
-      /* ------------------------- Generate CSV ------------------------- */
       CreateCSV();
 
-      /* ------------------------ Choice open file ----------------------- */
-      string? openFile;
-      Console.WriteLine("Voulez-vous l'ouvrir (Y/N)");
-      openFile = Console.ReadLine();
-      if (openFile != null)
-      {
-        string v = openFile.ToLower();
-        if (v == "y" || v == "yes")
-        {
-
-        }
-      }
+      OpenFileGenerate();
     }
     catch (System.Exception)
     {
@@ -54,10 +42,42 @@ class Tools
       throw;
     }
   }
-  /* ---------------------------------------------------------------- */
-  /*               Création du fichier CSV avec en-tête               */
-  /* ---------------------------------------------------------------- */
-  private static void CreateCSV()
+
+    /* ---------------------------------------------------------------- */
+    /*                  Ouvjerture du fichier CSV generé                */
+    /* ---------------------------------------------------------------- */
+    private static void OpenFileGenerate()
+    {
+
+        /* ------------------------ Choice open file ----------------------- */
+        string? openFile;
+        Console.WriteLine("Voulez-vous l'ouvrir (Y/N)");
+        openFile = Console.ReadLine();
+        if (openFile == null)
+        {
+            return;
+        }
+
+        string v = openFile.ToLower();
+        if (v == "y" || v == "yes")
+        {
+            try
+            {
+                Excel.Application excelApp = new Excel.Application();
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine($"Impossible d'ouvrir Excel, erreur : {error.Message}");
+                throw;
+            }
+        }
+    }
+
+
+    /* ---------------------------------------------------------------- */
+    /*               Création du fichier CSV avec en-tête               */
+    /* ---------------------------------------------------------------- */
+    private static void CreateCSV()
   {
     if (string.IsNullOrEmpty("check.csv"))
     {

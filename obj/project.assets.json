@@ -8,25 +8,26 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\rchap\\.nuget\\packages\\": {}
+    "C:\\Users\\rchapotin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\rchap\\Documents\\Sandbox\\csharp\\registry-app\\registry-app.csproj",
+      "projectUniqueName": "C:\\Users\\rchapotin\\Sandbox\\registry-app\\registry-app.csproj",
       "projectName": "registry-app",
-      "projectPath": "c:\\Users\\rchap\\Documents\\Sandbox\\csharp\\registry-app\\registry-app.csproj",
-      "packagesPath": "C:\\Users\\rchap\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\rchap\\Documents\\Sandbox\\csharp\\registry-app\\obj\\",
+      "projectPath": "C:\\Users\\rchapotin\\Sandbox\\registry-app\\registry-app.csproj",
+      "packagesPath": "C:\\Users\\rchapotin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rchapotin\\Sandbox\\registry-app\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\rchap\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\rchapotin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
       },
       "frameworks": {
         "net7.0": {
@@ -54,30 +55,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.5, 7.0.5]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[7.0.5, 7.0.5]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.5, 7.0.5]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[7.0.5, 7.0.5]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.4.23260.5\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

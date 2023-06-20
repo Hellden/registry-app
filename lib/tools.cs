@@ -1,88 +1,143 @@
-using System;
-using System.IO;
+using registry_app.lib;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 class Tools
 {
-  public Tools(string[] args)
-  {
-     //Read arguments
-    for (int i = 0; i < args.Length; i++)
-    {
-      switch (args[i])
-      {
-        case "-g":
-          Generate();
-          break;
-        case "-generate":
-          Console.WriteLine("Generate");
-          break;
-        default:
-          break;
-      }
-    }
-    Console.ForegroundColor = ConsoleColor.White;
-  }
+    private readonly string _fileName = "check.csv";
 
 
-  /* ---------------------------------------------------------------- */
-  /*                       Generate template csv                      */
-  /* ---------------------------------------------------------------- */
-  private static void Generate()
-  {
-    try
+    public Tools(string[] args)
     {
-      CreateCSV();
+        /*
+            ^ : Correspond au début de la chaîne.
+            [^-]* : Représente une séquence de zéro ou plusieurs caractères qui ne sont pas "-".
+            $ : Correspond à la fin de la chaîne.
+        */
+        string pattern = @"^[^-]*$";
+        Regex rg = new(pattern);
 
-      OpenFileGenerate();
+        //Read arguments
+        for (int i = 0; i < args.Length; i++)
+        {
+            switch (args[i])
+            {
+                case "-g":
+                    Generate();
+                    break;
+                case "-generate":
+                    Generate();
+                    break;
+                case "-s":
+                    string argRegex = args[i + 1];
+
+                    if (rg.IsMatch(args[i + 1]))
+                    {
+                        Console.WriteLine("Argument valide");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Non valide");
+                    }
+                    break;
+                case "-scan":
+                    Scan.New(args[i + 1]);
+                    break;
+                default:
+                    break;
+            }
+        }
+        Console.ForegroundColor = ConsoleColor.White;
     }
-    catch (System.Exception)
+
+
+    /* ---------------------------------------------------------------- */
+    /*                       Generate template csv                      */
+    /* ---------------------------------------------------------------- */
+    private void Generate()
     {
-      throw;
+        try
+        {
+            CreateCSV();
+
+            OpenFileGenerate();
+        }
+        catch (Exception err)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(err.Message);
+            Log.Error(err.Message);
+            throw;
+        }
     }
-  }
 
 
     /* ---------------------------------------------------------------- */
     /*               Création du fichier CSV avec en-tête               */
     /* ---------------------------------------------------------------- */
-    private static void CreateCSV()
-    {
-        if (string.IsNullOrEmpty("check.csv"))
-        {
 
-            using (StreamWriter writer = new("check.csv"))
+    // TODO: Ajouter dans le template, la liste des programmes par défaut windows et plus
+    private void CreateCSV()
+    {
+        if (File.Exists(_fileName))
+        {
+            try
             {
-                writer.WriteLine("Name");
+                Console.WriteLine($"Le fichier {_fileName} est déjà présent. Date de création du document : {File.GetCreationTime(_fileName)}, voulez-vous le recréer (Y/N) ?");
+                string? regenerate;
+                regenerate = Console.ReadLine();
+
+                if (regenerate != null)
+                {
+                    string v = regenerate.ToLower();
+                    if (v == "y" || v == "yes")
+                    {
+                        using (StreamWriter writer = new(_fileName))
+                        {
+                            writer.WriteLine("Name");
+                        }
+                        Console.WriteLine($"Fichier Check.csv regénéré avec succès à la date du : {File.GetCreationTime(_fileName)}.");
+                        Log.New("Génération du fichier csv");
+                    }
+                }
             }
-            Console.WriteLine("Fichier Check.csv crée avec succès.");
+            catch (Exception err)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(err.Message);
+                Log.Error(err.Message);
+                throw;
+            }
+
         }
         else
         {
-            Console.WriteLine("Le fichier check.csv est déja présent, voulez-vous le recrée (Y/N) ?");
-            string? regenerate;
-            regenerate = Console.ReadLine();
-
-            if (regenerate != null)
+            try
             {
-                string v = regenerate.ToLower();
-                if (v == "y" || v == "yes")
+                using (StreamWriter writer = new(_fileName))
                 {
-                    using (StreamWriter writer = new("check.csv"))
-                    {
-                        writer.WriteLine("Name");
-                    }
-                    Console.WriteLine("Fichier Check.csv regénéré avec succès.");
+                    writer.WriteLine("Name");
                 }
+                Console.WriteLine("Fichier Check.csv crée avec succès.");
+                Log.New("Génération du fichier csv");
+
             }
+            catch (Exception err)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(err.Message);
+                Log.Error(err.Message);
+                throw;
+            }
+
         }
     }
 
 
     /* ---------------------------------------------------------------- */
-    /*                  Ouvjerture du fichier CSV generé                */
+    /*                  Ouverture du fichier CSV généré                */
     /* ---------------------------------------------------------------- */
-    private static void OpenFileGenerate()
+    private void OpenFileGenerate()
     {
         /* ------------------------ Choice open file ----------------------- */
         string? openFile;
@@ -102,15 +157,18 @@ class Tools
                 ProcessStartInfo startInfo = new()
                 {
                     FileName = @"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE",
-                    Arguments = "check.csv"
+                    Arguments = _fileName
                 };
 
-                //Execution du process
+                //Exécution du process
                 using Process process = Process.Start(startInfo);
+                Log.New("Ouverture du template csv");
             }
-            catch (Exception error)
+            catch (Exception err)
             {
-                Console.WriteLine($"Impossible d'ouvrir Excel, erreur : {error.Message}");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Impossible d'ouvrir Excel, erreur : {err.Message}");
+                Log.Error(err.Message);
                 throw;
             }
         }

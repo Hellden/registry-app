@@ -38,7 +38,7 @@ class Helper
     Console.WriteLine("=========================================================================");
     Console.WriteLine(@"
     -h, -help                               aide
-    -g, -generate                           génére un template csv
+    -g, -generate                           génère un template csv
     -s, -scan                               lancer le scan
     -f, -file                               spécifié le nom du fichier csv
     -l, -log                                log d'exécution

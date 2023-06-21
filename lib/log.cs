@@ -36,14 +36,12 @@ namespace registry_app.lib
 
         public static void New(string? message = null)
         {
-            Log createLog = new();
-            createLog.WriteLog(message);
+            new Log().WriteLog(message);
         }
 
         public static void Error(string? message = null)
         {
-            Log createLog = new();
-            createLog.ErrorLog(message);
+            new Log().ErrorLog(message);
         }
     }
 }

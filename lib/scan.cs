@@ -20,12 +20,31 @@ namespace registry_app.lib
 
         private void LaunchScan(string? filePath)
         {
-           
+            //Test check.csv
+            TestCsv();
         }
+
+
+        private void TestCsv()
+        {
+            try
+            {
+                if(File.Exists(_fileName)) { return; }
+                Tools.NewGenerate();
+            }
+            catch (Exception err)
+            {
+                Log.Error(err.Message);
+                Console.WriteLine(err.Message);
+                throw;
+            }
+        }
+
+
 
         public static void New(string? filePath)
         {
-            Scan scan = new();
+            new Scan().LaunchScan(filePath);
             Console.WriteLine($"Le file path est : {filePath}");
         }
     }

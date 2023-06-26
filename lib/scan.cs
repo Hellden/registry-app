@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace registry_app.lib
+﻿namespace registry_app.lib
 {
     internal class Scan
     {
@@ -24,12 +18,11 @@ namespace registry_app.lib
             TestCsv();
         }
 
-
         private void TestCsv()
         {
             try
             {
-                if(File.Exists(_fileName)) { return; }
+                if (File.Exists(_fileName)) { return; }
                 Tools.NewGenerate();
             }
             catch (Exception err)
@@ -39,8 +32,6 @@ namespace registry_app.lib
                 throw;
             }
         }
-
-
 
         public static void New(string? filePath)
         {

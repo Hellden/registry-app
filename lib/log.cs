@@ -34,6 +34,7 @@ namespace registry_app.lib
             writer.WriteLine($"⚠️ [{DateTime.Now}] | [ERROR] : {message}");
         }
 
+
         public static void New(string? message = null)
         {
             new Log().WriteLog(message);

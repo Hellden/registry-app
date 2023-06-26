@@ -8,7 +8,7 @@ namespace registry_app.lib
         private readonly string _fileName = "check.csv";
 
 
-        public static void New (string[] args)
+        public static void New(string[] args)
         {
             new Tools().Main(args);
         }
@@ -35,8 +35,6 @@ namespace registry_app.lib
                         Generate();
                         break;
                     case "-s":
-                        string argRegex = args[i + 1];
-
                         if (rg.IsMatch(args[i + 1]))
                         {
                             Console.WriteLine("Argument valide");
@@ -50,7 +48,18 @@ namespace registry_app.lib
                     case "-scan":
                         Scan.New(args[i + 1]);
                         break;
+                    case "-la":
+                        _ = new ListDefaultApp();
+                        break;
+                    case "-listApp":
+                        _ = new ListDefaultApp();
+                        break;
+                    case "-l":
+                        break;
+                    case "-log":
+                        break;
                     default:
+                        _ = new Helper();
                         break;
                 }
             }
@@ -82,12 +91,9 @@ namespace registry_app.lib
         {
             new Tools().Generate();
         }
-
         /* ---------------------------------------------------------------- */
         /*               Création du fichier CSV avec en-tête               */
         /* ---------------------------------------------------------------- */
-
-        // TODO: Ajouter dans le template, la liste des programmes par défaut windows et plus
         private void CreateCSV()
         {
             if (File.Exists(_fileName))
@@ -128,6 +134,14 @@ namespace registry_app.lib
                     using (StreamWriter writer = new(_fileName))
                     {
                         writer.WriteLine("Name");
+
+                        // Add list default app
+                        var app = ListDefaultApp.PopultationCSV();
+                        Array.Sort(app);
+                        foreach (var item in app)
+                        {
+                            writer.WriteLine(item);
+                        }
                     }
                     Console.WriteLine("Fichier Check.csv crée avec succès.");
                     Log.New("Génération du fichier csv");

@@ -41,6 +41,7 @@ class Helper
     -g, -generate                           génère un template csv
     -s, -scan                               lancer le scan
     -f, -file                               spécifié le nom du fichier csv
+    -la, -listApp                        liste des applications par défaut
     -l, -log                                log d'exécution
     ");
     Console.WriteLine(@"

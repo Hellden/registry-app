@@ -11,7 +11,7 @@ namespace RegistryApp
       // Request Helper script
       if (args.Length == 0 || args[0] == "-h" || args[0] == "-help")
       {
-        new Helper();
+        _ = new Helper();
       }
       else
       {

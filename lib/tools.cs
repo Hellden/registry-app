@@ -5,8 +5,7 @@ namespace registry_app.lib
 {
     internal class Tools
     {
-        private readonly string _fileName = "check.csv";
-
+        public string Filename { get; set; } = "check.csv";
 
         public static void New(string[] args)
         {
@@ -29,9 +28,19 @@ namespace registry_app.lib
                 switch (args[i])
                 {
                     case "-g":
+                        if (rg.IsMatch(args[i] + 1))
+                        {
+                            Console.WriteLine(Filename);
+                            Filename = args[i] + 1;
+                        }
+
                         Generate();
                         break;
                     case "-generate":
+                        if (rg.IsMatch(args[i] + 1))
+                        {
+                            Filename = args[i] + 1;
+                        }
                         Generate();
                         break;
                     case "-s":
@@ -58,6 +67,7 @@ namespace registry_app.lib
                         break;
                     case "-log":
                         break;
+
                     default:
                         _ = new Helper();
                         break;
@@ -96,11 +106,11 @@ namespace registry_app.lib
         /* ---------------------------------------------------------------- */
         private void CreateCSV()
         {
-            if (File.Exists(_fileName))
+            if (File.Exists(Filename))
             {
                 try
                 {
-                    Console.WriteLine($"Le fichier {_fileName} est déjà présent. Date de création du document : {File.GetCreationTime(_fileName)}, voulez-vous le recréer (Y/N) ?");
+                    Console.WriteLine($"Le fichier {Filename} est déjà présent. Date de création du document : {File.GetCreationTime(Filename)}, voulez-vous le recréer (Y/N) ?");
                     string? regenerate;
                     regenerate = Console.ReadLine();
 
@@ -109,11 +119,11 @@ namespace registry_app.lib
                         string v = regenerate.ToLower();
                         if (v == "y" || v == "yes")
                         {
-                            using (StreamWriter writer = new(_fileName))
+                            using (StreamWriter writer = new(Filename))
                             {
                                 writer.WriteLine("Name");
                             }
-                            Console.WriteLine($"Fichier Check.csv regénéré avec succès à la date du : {File.GetCreationTime(_fileName)}.");
+                            Console.WriteLine($"Fichier Check.csv regénéré avec succès à la date du : {File.GetCreationTime(Filename)}.");
                             Log.New("Génération du fichier csv");
                         }
                     }
@@ -131,7 +141,7 @@ namespace registry_app.lib
             {
                 try
                 {
-                    using (StreamWriter writer = new(_fileName))
+                    using (StreamWriter writer = new(Filename))
                     {
                         writer.WriteLine("Name");
 
@@ -182,7 +192,7 @@ namespace registry_app.lib
                     ProcessStartInfo startInfo = new()
                     {
                         FileName = @"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE",
-                        Arguments = _fileName
+                        Arguments = Filename
                     };
 
                     //Exécution du process

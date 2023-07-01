@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WF05/JtKMVpkmZ0c/ij2j2ntquw5AV+5gt2iZffKIKPyJFb5+sHlRbpeL+WPNLqvip0zZWY/J+MnM83O4EpqoA==",
+  "dgSpecHash": "icJsCbYMD7LrRTWK4XxQVretYPsf1sypmBhHVVR8jMqIaoidH1MuhZusZ4BcN1dPl7px4KaQIYVtPOmtcBzqsA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rchapotin\\Sandbox\\registry-app\\registry-app.csproj",
+  "projectFilePath": "/Users/hellden/sandbox/csharp/registry-app/registry-app.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

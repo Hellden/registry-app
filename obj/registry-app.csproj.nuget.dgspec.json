@@ -1,27 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rchapotin\\Sandbox\\registry-app\\registry-app.csproj": {}
+    "/Users/hellden/sandbox/csharp/registry-app/registry-app.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rchapotin\\Sandbox\\registry-app\\registry-app.csproj": {
+    "/Users/hellden/sandbox/csharp/registry-app/registry-app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rchapotin\\Sandbox\\registry-app\\registry-app.csproj",
+        "projectUniqueName": "/Users/hellden/sandbox/csharp/registry-app/registry-app.csproj",
         "projectName": "registry-app",
-        "projectPath": "C:\\Users\\rchapotin\\Sandbox\\registry-app\\registry-app.csproj",
-        "packagesPath": "C:\\Users\\rchapotin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rchapotin\\Sandbox\\registry-app\\obj\\",
+        "projectPath": "/Users/hellden/sandbox/csharp/registry-app/registry-app.csproj",
+        "packagesPath": "/Users/hellden/.nuget/packages/",
+        "outputPath": "/Users/hellden/sandbox/csharp/registry-app/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\rchapotin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/hellden/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
@@ -54,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
         }
       }
     }

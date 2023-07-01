@@ -16,3 +16,26 @@
 [26/06/2023 16:02:05] | [INFO] : Ouverture du template csv
 [26/06/2023 16:08:11] | [INFO] : Démarrage du programme.
 [26/06/2023 16:08:11] | [INFO] : Demande listing application par défaut déclaré
+[01/07/2023 18:42:16] | [INFO] : Démarrage du programme.
+[01/07/2023 18:42:39] | [INFO] : Démarrage du programme.
+[01/07/2023 18:42:51] | [INFO] : Démarrage du programme.
+[01/07/2023 18:43:00] | [INFO] : Démarrage du programme.
+[01/07/2023 18:43:00] | [INFO] : Demande listing application par défaut déclaré
+[01/07/2023 18:43:32] | [INFO] : Démarrage du programme.
+[01/07/2023 18:43:32] | [INFO] : Génération du fichier csv
+⚠️ [01/07/2023 18:43:34] | [ERROR] : An error occurred trying to start process 'C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE' with working directory '/Users/hellden/sandbox/csharp/registry-app'. No such file or directory
+⚠️ [01/07/2023 18:43:34] | [ERROR] : An error occurred trying to start process 'C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE' with working directory '/Users/hellden/sandbox/csharp/registry-app'. No such file or directory
+[01/07/2023 18:46:30] | [INFO] : Démarrage du programme.
+[01/07/2023 18:47:47] | [INFO] : Démarrage du programme.
+[01/07/2023 18:48:24] | [INFO] : Démarrage du programme.
+[01/07/2023 18:48:43] | [INFO] : Démarrage du programme.
+[01/07/2023 18:48:43] | [INFO] : Génération du fichier csv
+[01/07/2023 18:54:15] | [INFO] : Démarrage du programme.
+⚠️ [01/07/2023 18:54:15] | [ERROR] : Value cannot be null. (Parameter 'path')
+⚠️ [01/07/2023 18:54:15] | [ERROR] : Value cannot be null. (Parameter 'path')
+[01/07/2023 18:56:27] | [INFO] : Démarrage du programme.
+⚠️ [01/07/2023 18:56:27] | [ERROR] : Value cannot be null. (Parameter 'path')
+⚠️ [01/07/2023 18:56:27] | [ERROR] : Value cannot be null. (Parameter 'path')
+[01/07/2023 18:56:48] | [INFO] : Démarrage du programme.
+[01/07/2023 18:56:48] | [INFO] : Génération du fichier csv
+[01/07/2023 19:02:32] | [INFO] : Démarrage du programme.

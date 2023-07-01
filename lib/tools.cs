@@ -28,10 +28,20 @@ namespace registry_app.lib
                 switch (args[i])
                 {
                     case "-g":
-                        if (rg.IsMatch(args[i] + 1))
+                        Console.WriteLine("coucou");
+                        if (rg.IsMatch(args[i + 1]))
                         {
-                            Console.WriteLine(Filename);
-                            Filename = args[i] + 1;
+                            var splitArgs = args[i + 1].Split(".");
+                            Console.WriteLine(splitArgs[1]);
+                            if (splitArgs[1] == "csv")
+                            {
+                                Filename = args[i + 1];
+                            }
+                            else
+                            {
+                                Console.WriteLine("Benard" + Filename);
+                                Filename = args[i + 1] + ".csv";
+                            }
                         }
 
                         Generate();

@@ -5,7 +5,7 @@ namespace registry_app.lib
 {
     internal class Tools
     {
-        public string Filename { get; set; } = "check.csv";
+        public string Filename { get; set; } = "Template/check.csv";
 
         public static void New(string[] args)
         {
@@ -22,28 +22,23 @@ namespace registry_app.lib
             string pattern = @"^[^-]*$";
             Regex rg = new(pattern);
 
+            // Create default directory
+            Directory.CreateDirectory("Template");
+
             //Read arguments
             for (int i = 0; i < args.Length; i++)
             {
                 switch (args[i])
                 {
                     case "-g":
-                        Console.WriteLine("coucou");
-                        if (rg.IsMatch(args[i + 1]))
+                        if (args.Length >= 2)
                         {
-                            var splitArgs = args[i + 1].Split(".");
-                            Console.WriteLine(splitArgs[1]);
-                            if (splitArgs[1] == "csv")
+                            if (rg.IsMatch(args[i + 1]))
                             {
-                                Filename = args[i + 1];
-                            }
-                            else
-                            {
-                                Console.WriteLine("Benard" + Filename);
                                 Filename = args[i + 1] + ".csv";
+                                Directory.CreateDirectory(Filename);
                             }
                         }
-
                         Generate();
                         break;
                     case "-generate":
@@ -133,7 +128,7 @@ namespace registry_app.lib
                             {
                                 writer.WriteLine("Name");
                             }
-                            Console.WriteLine($"Fichier Check.csv regénéré avec succès à la date du : {File.GetCreationTime(Filename)}.");
+                            Console.WriteLine($"Fichier {Filename} regénéré avec succès à la date du : {File.GetCreationTime(Filename)}.");
                             Log.New("Génération du fichier csv");
                         }
                     }
@@ -154,7 +149,6 @@ namespace registry_app.lib
                     using (StreamWriter writer = new(Filename))
                     {
                         writer.WriteLine("Name");
-
                         // Add list default app
                         var app = ListDefaultApp.PopultationCSV();
                         Array.Sort(app);
@@ -163,7 +157,7 @@ namespace registry_app.lib
                             writer.WriteLine(item);
                         }
                     }
-                    Console.WriteLine("Fichier Check.csv crée avec succès.");
+                    Console.WriteLine($"Fichier {Filename} crée avec succès.");
                     Log.New("Génération du fichier csv");
 
                 }
